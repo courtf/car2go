@@ -21,10 +21,7 @@ cd /vagrant/scripts && ./ubuntu.sh
 
 I've provided a `Vagrantfile`, which does work with `vagrant up`, but the port forwarding doesn't seem to work
 from the host -> Vagrant -> Docker.  Not sure why, but you can still `vagrant ssh` and use `psql` to your heart's
-content:
-```shell
-$ sudo apt-get install postgresql-client-9.3
-```
+content.
 
 ##### Notes:
 
