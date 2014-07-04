@@ -7,8 +7,8 @@ source ./config.sh && config_vars
 
 echo "==> Starting docker build, this may take a while ..."
 #    -v /tmp/postgresql:/data \
-docker build -t="car2go" .. && \
-docker run -d --name="car2go" \
+sudo docker build -t="car2go" .. && \
+sudo docker run -d --name="car2go" \
     -p $host:$port:$port \
     -e USER="$user" \
     -e PASS="$pass" \
