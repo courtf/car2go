@@ -9,7 +9,7 @@ source ./config.sh && config_vars
 # set up pgpassfile
 # http://www.postgresql.org/docs/9.3/interactive/libpq-pgpass.html
 pstr="$host:$port:$dbname:$user:$pass"
-if [[ ! -f pgpass ||  (-z $(grep -q $pstr pgpass))]]; then
+if [[ ! -f pgpass ||  (-z $(grep $pstr pgpass))]]; then
     echo $pstr >> pgpass && chmod 0600 pgpass
 fi
 
