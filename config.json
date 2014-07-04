@@ -1,0 +1,7 @@
+{
+    "User": "car2go",
+    "Pass": "car2go",
+    "Host": "127.0.0.1",
+    "Port": 5432,
+    "DBName": "car2go"
+}
