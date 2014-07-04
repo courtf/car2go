@@ -22,5 +22,7 @@ $ sudo apt-get install postgresql-client
 code in several languages to be included alongside.
 
 Much thanks to these other repos for a great Docker starting point:
+
 https://github.com/Painted-Fox/docker-postgresql
+
 https://github.com/phusion/baseimage-docker
