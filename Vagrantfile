@@ -13,7 +13,7 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
   config.vm.box = "ubuntu/trusty64"
 
   # Run provisioning script.
-  config.vm.provision "shell", path: "ubuntu_docker_postgis.sh"
+  config.vm.provision "shell", path: "scripts/ubuntu.sh"
 
   # Forward 5433 to the vm's postgresql port
   config.vm.network "forwarded_port", guest: 5432, host: 5432
