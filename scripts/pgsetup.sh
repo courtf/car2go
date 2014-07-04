@@ -38,26 +38,8 @@ psql -h $host -p $port -U $user $dbname -q <<-EOF
 EOF
 
 echo "Fetching car2go data ..."
-wget http://pin13.net/car2go/data/2012-06.sql.gz
-wget http://pin13.net/car2go/data/2012-07.sql.gz
-wget http://pin13.net/car2go/data/2012-08.sql.gz
-wget http://pin13.net/car2go/data/2012-09.sql.gz
-wget http://pin13.net/car2go/data/2012-10.sql.gz
-wget http://pin13.net/car2go/data/2012-12.sql.gz
-wget http://pin13.net/car2go/data/2013-01.sql.gz
-wget http://pin13.net/car2go/data/2013-02.sql.gz
-wget http://pin13.net/car2go/data/2013-03.sql.gz
-wget http://pin13.net/car2go/data/2013-04.sql.gz
-wget http://pin13.net/car2go/data/2013-05.sql.gz
-wget http://pin13.net/car2go/data/2013-06.sql.gz
-wget http://pin13.net/car2go/data/2013-07.sql.gz
-wget http://pin13.net/car2go/data/2013-08.sql.gz
-wget http://pin13.net/car2go/data/2013-09.sql.gz
-wget http://pin13.net/car2go/data/2013-10.sql.gz
-wget http://pin13.net/car2go/data/2013-11.sql.gz
-wget http://pin13.net/car2go/data/2013-12.sql.gz
-wget http://pin13.net/car2go/data/sample.sql.gz
-wget http://pin13.net/car2go/data/vehicles.sql.gz
+cat ./sql.list | xargs -I % wget -q http://pin13.net/car2go/data/%.sql.gz
+echo "Unzipping car2go data ..."
 gunzip *.gz
 
 echo "Inserting car2go data. This will likely take multiple hours ..."
@@ -74,6 +56,5 @@ EOF
 
 # cleanup our downloads
 rm *.sql
-rm *.gz
 
 echo "complete!"
