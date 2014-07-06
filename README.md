@@ -26,7 +26,7 @@ I've tried a couple other methods of making this faster/easier, but ran into lot
 1. Attempted to use the automated Docker provisioning for Vagrant described [here](http://docs.vagrantup.com/v2/provisioning/docker.html).
 This consistently resulted in PGP failures from within Vagrant's provisioning code.  I opted to just install docker.io directly...
 
-2. Attempted to commit, tag and push the fully built container (which worked) and then pull it back down and run it again.
+2. Attempted to commit, tag and push the fully built container (which worked) and then pull it back down and run it again.  See: https://registry.hub.docker.com/u/courtf/car2go/
 After pulling and starting up the docker container with `docker pull` and `docker run`, psql refused to maintain a connection:
 `server closed the connection unexpectedly`.
 
