@@ -3,28 +3,16 @@ car2go
 
 A little repo to automate setting up some historical data from car2go in postgis.
 
-I've provided a `Vagrantfile`, which does work with `vagrant up`, but the port forwarding doesn't seem to work
-from the host -> Vagrant -> Docker.  Not sure why, but you can still `vagrant ssh` and use `psql` to your heart's
-content.  Modify the `config.json` to your liking beforehand.
-
-All you should need to do is:
-```shell
-$ vagrant up
-```
-
-Followed by:
-```shell
-$ vagrant ssh
-```
+I've provided a `Vagrantfile`, which works with `vagrant up`. Modify the `config.json` to your liking beforehand, and then `vagrant ssh` and use `psql` to your heart's content.
 
 Once ssh'd into the guest, you should be able to psql in to the db as shown below, replacing `car2go car2go` with
 your DB username and DB name, if you changed them in `config.json`.
 
 ```shell
 $ PGPASSFILE=/vagrant/scripts/pgpass psql -h 127.0.0.1 -U car2go car2go
-
-# Or, if you don't mind the password prompt:
-
+```
+Or, if you don't mind the password prompt:
+```
 $ psql -h 127.0.0.1 -U car2go car2go
 ```
 
