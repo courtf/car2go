@@ -5,7 +5,7 @@
 # to be on its own line.
 
 function get_val {
-    echo $(sed -n "s/^ *\"$1\": *\"*\([a-z0-9A-Z.]*\)\"* *,*/\1/p" ../config.json)
+    echo $(sed -n "s/^ *\"$1\": *\"*\([a-z0-9A-Z.]*\)\"* *,*/\1/p" ./config.json)
 }
 
 function config_vars {
