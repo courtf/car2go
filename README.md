@@ -43,7 +43,7 @@ After pulling and starting up the docker container with `docker pull` and `docke
 `server closed the connection unexpectedly`.
 
 3. Attempted to open ports out to the host OS (wherever vagrant is being run). I followed instructions [here](http://maori.geek.nz/post/vagrant_with_docker_how_to_set_up_postgres_elasticsearch_and_redis_on_mac_os_x).
-This ended up with the same PGP errors as #1.
+This ended up with the same PGP errors as #1, and also seemed to break using `vagrant destroy` and `vagrant ssh` from the build directory.
 
 
 ##### Thanks:
