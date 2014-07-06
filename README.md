@@ -1,8 +1,6 @@
 car2go
 ======
 
-#### Work In progress!
-
 A little repo to automate setting up some historical data from car2go in postgis.
 
 I've provided a `Vagrantfile`, which does work with `vagrant up`, but the port forwarding doesn't seem to work

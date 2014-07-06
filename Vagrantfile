@@ -4,10 +4,6 @@
 # Vagrantfile API/syntax version. Don't touch unless you know what you're doing!
 VAGRANTFILE_API_VERSION = "2"
 
-$script = <<SCRIPT
-cd /vagrant/scripts && ./ubuntu.sh
-SCRIPT
-
 Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
   # All Vagrant configuration is done here. The most common configuration
   # options are documented and commented below. For a complete reference,
@@ -16,8 +12,14 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
   # Every Vagrant virtual environment requires a box to build off of.
   config.vm.box = "ubuntu/trusty64"
 
-  # Run provisioning script.
-  config.vm.provision "shell", inline: $script
+  # Uncomment if you are building the docker container from scratch.
+  # This will take several hours to complete the sql inserts.
+  # config.vm.provision "shell", inline: "cd /vagrant/scripts && ./ubuntu.sh"
+
+  # Use a pre-built docker container, with sql updated as of 4/5/2014.
+  config.vm.provision "docker" do |d|
+    d.run "courtf/car2go"
+  end
 
   # Forward 5433 to the vm's postgresql port
   config.vm.network "forwarded_port", guest: 5432, host: 5432

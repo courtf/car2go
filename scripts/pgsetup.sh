@@ -31,7 +31,7 @@ psql -h $host -p $port -U $user $dbname -q <<-EOF
     CREATE EXTENSION postgis;
     CREATE TABLE "vehicles" ("id" serial UNIQUE, "plate" varchar(6) COLLATE "default","vin" varchar(30) COLLATE "default");
     CREATE INDEX "vehicles_pkey" ON "vehicles" USING btree("id" ASC NULLS LAST);
-    CREATE TABLE "positions" ("id" serial UNIQUE NOT NULL,"vehicle_id" int4,"fuel_level" int2,"interior_good" bool,"exterior_good" bool,"date" timestamp(6) NULL,"location" "geography");
+    CREATE TABLE "positions" ("id" serial NOT NULL,"vehicle_id" int4,"fuel_level" int2,"interior_good" bool,"exterior_good" bool,"date" timestamp(6) NULL,"location" "geography");
     CREATE INDEX "positions_pkey" ON "positions" (id);
     CREATE INDEX "position_gist" ON "positions" USING GIST (location);
     CREATE INDEX "position_date" ON "positions" (date);
