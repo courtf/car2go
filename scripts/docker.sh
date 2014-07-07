@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 
-# this script runs an existing build, courtf/car2go
+# this script builds a new image, "car2go"
 # according to the provided config
 
 source ./config.sh && config_vars
