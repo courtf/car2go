@@ -3,7 +3,7 @@ car2go
 
 A little repo to automate setting up some historical data from car2go in postgis.
 
-I've provided a `Vagrantfile`, which works with `vagrant up`. Modify the `config.json` to your liking beforehand, and then `vagrant ssh` and use `psql` to your heart's content.
+I've provided a `Vagrantfile`, which works with `vagrant up`. Modify the `scripts/config.json` to your liking beforehand, and then `vagrant ssh` and use `psql` to your heart's content.
 
 Once ssh'd into the guest, you should be able to psql in to the db as shown below, replacing `car2go car2go` with
 your DB username and DB name, if you changed them in `config.json`.
